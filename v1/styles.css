@@ -1,0 +1,27 @@
+html{
+  margin: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  width: 100vw;
+  top:0;
+  left:0;
+  margin:0 auto;
+  position:absolute;
+}
+.keys{
+  background-color: yellow;
+  float: left;
+  height: 50px;
+  padding: 0px;
+  margin:0px;
+  width: 49%;
+  position: relative;
+  border: 1px solid black;
+  top:50px;
+  bottom: 50px;
+
+}
