@@ -1,0 +1,64 @@
+html{
+  margin: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+#container {
+  min-height: 100vh;
+  min-width: 100vw;
+  top:0;
+  left:0;
+  margin:0;
+  display: flex;
+  align-items: flex-end;
+  z-index:1;
+  position: relative;
+  
+}
+#piano{
+  min-height: 100%;
+  min-width: 100%;
+  top:0;
+  left:0;
+  margin:0;
+  display: flex;
+  align-items: flex-start;
+  z-index:2;
+  position: relative;
+}
+.octane{
+  min-height: 100%;
+  width: 14%;
+  display: flex;
+  z-index: 4;
+  position: relative;
+}
+.keys{
+  background-color: yellow;
+  float: left;
+  height: 30em;
+  padding: 0;
+  margin:0;
+  width: 10%;
+  outline: 1px solid red;
+
+}
+.octane .blacks{
+  position: absolute;
+  display: flex;
+  float: left;
+  height:40px;
+  width:100%;
+  z-index: 5;
+}
+.pressed{
+  background-color: grey;
+}
+.black2s{
+  background-color: black;
+  height:20px;
+  width: 10%;
+  margin: 0 9.5%;
+}
