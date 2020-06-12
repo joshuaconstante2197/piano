@@ -42,6 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
   
   function keyToNote(e){
+    if (event.repeat != undefined) {
+      allowed = !event.repeat;
+    }
+    if (!allowed) return;
+    allowed = false;
+    //...
     for(i=0;i<=keys.length;i++){
       if(e.keyCode === keys[i]){
         key[i].classList.add("pressed")
@@ -57,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   function pressed(e){
+    allowed = true;
     for(i=0;i<=keys.length;i++){
       if(e.keyCode === keys[i]){
         key[i].classList.remove("pressed")
@@ -70,6 +77,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-  document.onkeydown
+//   var allowed = true;
+//   $(document).keydown(function(event){
+//     if(event.repeat != undefined){
+//       allowed = !event.repeat;
+//     }
+//     if (!allowed) return;
+//     allowed = false;
+//   });
+//   $(document).keyup(function(e) { 
+//     allowed = true;
+//   });
+//   $(document).focus(function(e) { 
+//     allowed = true;
+//   });
   
 })
