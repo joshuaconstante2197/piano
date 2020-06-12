@@ -11,38 +11,34 @@ document.addEventListener('DOMContentLoaded', () => {
   var black3s = document.querySelectorAll("#container .black3s")
   
   var whiteNotes= [
-    new Howl({src:['libs/notes/a3.mp3']}),
-    new Howl({src:['libs/notes/b3.mp3']}),
-    new Howl({src:['libs/notes/c3.mp3']}),
-    new Howl({src:['libs/notes/d3.mp3']}),
-    new Howl({src:['libs/notes/e3.mp3']}),
-    new Howl({src:['libs/notes/f3.mp3']}),
-    new Howl({src:['libs/notes/g3.mp3']}),
-    new Howl({src:['libs/notes/a4.mp3']}),
-    new Howl({src:['libs/notes/b4.mp3']}),
-    new Howl({src:['libs/notes/c4.mp3']}),
-    new Howl({src:['libs/notes/d4.mp3']}),
-    new Howl({src:['libs/notes/e4.mp3']}),
-    new Howl({src:['libs/notes/f4.mp3']}),
-    new Howl({src:['libs/notes/g4.mp3']})
+    new Howl({src:['libs/notes/c3.ogg']}),
+    new Howl({src:['libs/notes/d3.ogg']}),
+    new Howl({src:['libs/notes/e3.ogg']}),
+    new Howl({src:['libs/notes/f3.ogg']}),
+    new Howl({src:['libs/notes/g3.ogg']}),
+    new Howl({src:['libs/notes/a4.ogg']}),
+    new Howl({src:['libs/notes/b4.ogg']}),
+    new Howl({src:['libs/notes/c4.ogg']}),
+    new Howl({src:['libs/notes/d4.ogg']}),
+    new Howl({src:['libs/notes/e4.ogg']}),
+    new Howl({src:['libs/notes/f4.ogg']}),
+    new Howl({src:['libs/notes/g4.ogg']}),
+    new Howl({src:['libs/notes/a5.ogg']}),
+    new Howl({src:['libs/notes/b5.ogg']})
   ]
   var blacks2Notes = [
-    new Howl({src:['libs/notes/a-3.mp3']}),
-    new Howl({src:['libs/notes/c-3.mp3']}),
-    new Howl({src:['libs/notes/a-4.mp3']}),
-    new Howl({src:['libs/notes/c-4.mp3']})
+    new Howl({src:['libs/notes/c-3.ogg']}),
+    new Howl({src:['libs/notes/d-3.ogg']}),
+    new Howl({src:['libs/notes/c-4.ogg']}),
+    new Howl({src:['libs/notes/d-4.ogg']})
   ]
   var blacks3Notes = [
-    new Howl({src:['libs/notes/d-3.mp3']}),
-    new Howl({src:['libs/notes/f-3.mp3']}),
-    new Howl({src:['libs/notes/g-3.mp3']}),
-    new Howl({src:['libs/notes/f-3.mp3']}),
-    new Howl({src:['libs/notes/a-3.mp3']}),
-    new Howl({src:['libs/notes/d-4.mp3']}),
-    new Howl({src:['libs/notes/f-4.mp3']}),
-    new Howl({src:['libs/notes/g-4.mp3']}),
-    new Howl({src:['libs/notes/f-4.mp3']}),
-    new Howl({src:['libs/notes/a-4.mp3']})
+    new Howl({src:['libs/notes/f-3.ogg']}),
+    new Howl({src:['libs/notes/g-3.ogg']}),
+    new Howl({src:['libs/notes/a-4.ogg']}),
+    new Howl({src:['libs/notes/f-4.ogg']}),
+    new Howl({src:['libs/notes/g-4.ogg']}),
+    new Howl({src:['libs/notes/a-5.ogg']}),
   ]
   
   function keyToNote(e){
@@ -64,16 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
     for(i=0;i<=keys.length;i++){
       if(e.keyCode === keys[i]){
         key[i].classList.remove("pressed")
-        whiteNotes[i].pause()
+        whiteNotes[i].stop()
       }else if(e.keyCode === blacks2[i]){
         black2s[i].style.backgroundColor="black";
-        blacks2Notes[i].pause()
+        blacks2Notes[i].stop()
       }else if(e.keyCode === blacks3[i]){
         black3s[i].style.backgroundColor="black";
-        blacks3Notes[i].pause()
+        blacks3Notes[i].stop()
       }
     }
   }
-  
+  document.onkeydown
   
 })
