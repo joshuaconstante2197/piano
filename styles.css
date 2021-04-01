@@ -36,6 +36,9 @@ body{
   display: flex;
   z-index: 4;
   position: relative;
+  text-align: center;
+  line-height: 300px;
+
 }
 .keys{
   background-color: white;
@@ -53,9 +56,10 @@ body{
   float: left;
   margin:0;
   padding: 0;
-  height:60px;
+  height:180px;
   width:50%;
   z-index: 5;
+  color: red;
 }
 .pressed{
   background-color: red;
@@ -75,9 +79,10 @@ body{
   display: flex;
   float: left;
   margin-left:49%;
-  height:60px;
+  height:180px;
   width:52%;
   z-index: 5;
+  color: red;
 }
 .black3s{
   background-color: black;
@@ -88,4 +93,5 @@ body{
   width: 10%;
   margin: 0 0 0 13.5%;
   box-shadow:  1px 1px 2px rgba(0,0,0,0.7), -1px 1px 2px rgba(0,0,0,0.7) ;
+
 }
