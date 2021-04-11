@@ -10,45 +10,50 @@
   <title>Piano v1</title>
 </head>
 <body>
+  <div id="volumeMeter">
+    <label for=fader>Volume</label>
+    <input type=range min=0 max=100 value=20 id=fader step=5 onchange="outputUpdate(value)">
+    <output for=fader id=volume>50</output>
+  </div>
 <div id="container">
   <div id="piano">
     <div class="octane">
       <div class="blacks2">
-        <div class="black2s">C-3</div>
-        <div class="black2s">D-3</div>
+        <div class="black2s"><span class="keyName">c</span></div>
+        <div class="black2s"><span class="keyName">c</span></div>
       </div>
       <div class="blacks3">
-        <div class="black3s">F-3</div>
-        <div class="black3s">G-3</div>
-        <div class="black3s">A-4</div>
+        <div class="black3s"><span class="keyName">c</span></div>
+        <div class="black3s"><span class="keyName">c</span></div>
+        <div class="black3s"><span class="keyName">c</span></div>
       </div>
 
-      <div class="keys">C3-</div>
-      <div class="keys">D3-</div>
-      <div class="keys">E3-</div>
-      <div class="keys">F3-</div>
-      <div class="keys">G3-</div>
-      <div class="keys">A4-</div>
-      <div class="keys">B4-</div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
     </div>
     <div class="octane">
       <div class="blacks2">
-        <div class="black2s">C-4</div>
-        <div class="black2s">D-4</div>
+        <div class="black2s"><span class="keyName">c</span></div>
+        <div class="black2s"><span class="keyName">c</span></div>
       </div>
       <div class="blacks3">
-        <div class="black3s">F-4</div>
-        <div class="black3s">G-4</div>
-        <div class="black3s">A-5</div>
+        <div class="black3s"><span class="keyName">c</span></div>
+        <div class="black3s"><span class="keyName">c</span></div>
+        <div class="black3s"><span class="keyName">c</span></div>
       </div>
   
-      <div class="keys">C4-</div>
-      <div class="keys">D4-</div>
-      <div class="keys">E4-</div>
-      <div class="keys">F4-</div>
-      <div class="keys">G4-</div>
-      <div class="keys">A5-</div>
-      <div class="keys">B5-</div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
+      <div class="keys"><span class="keyName">c</span></div>
     </div>
   
   </div>
@@ -56,5 +61,18 @@
 </div>
 </div>
 </body>
-
+<script type="module" src="libs/howler.js/dist/howler.js">
+  import {Howl, Howler} from './libs/howler.js/dist/howler.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    
+  })
+  
+</script>
+<script>
+  function outputUpdate(vol) {
+  document.querySelector('#volume').value = vol;
+    Howler.volume(vol/100);
+    
+    }
+</script>
 </html>

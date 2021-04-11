@@ -1,5 +1,8 @@
 
+  
+
 document.addEventListener('DOMContentLoaded', () => {
+  
   let keys=  [81,65,83,68,70,71,72,74,75,76,186,222,221,220]
   let blacks2=[87,69,85,73]
   let blacks3=[82,84,89,79,80,219]
@@ -79,27 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+ 
   
   
 })
-window.onload= function()
-{
-  let keys=  [81,65,83,68,70,71,72,74,75,76,186,222,221,220]
-  let blacks2=[87,69,85,73]
-  let blacks3=[82,84,89,79,80,219]
-
-  var key = document.querySelectorAll("#container .keys")
-  var black2s = document.querySelectorAll("#container .black2s")
-  var black3s = document.querySelectorAll("#container .black3s")
-
-    for (i = 0; i < key.length; i++) {
-      key[i].textContent += String.fromCharCode(keys[i]) 
-    }
-    for (i = 0; i < black2s.length; i++) {
-      black2s[i].textContent += String.fromCharCode(blacks2[i])
-    }
-    for (i = 0; i < black3s.length; i++) {
-      black3s[i].textContent += String.fromCharCode(blacks3[i]) 
-
-    }
-}
+ 
