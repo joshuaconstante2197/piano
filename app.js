@@ -109,13 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
   async function task2(){
     await timer(100);
   }
+  async function task3(){
+    await timer(5);
+  }
   async function playTwinkleSong(){
     for (let index = 1; index < twinkle1.length; index++) {
       if((index - 1) % 7 === 0){
         await task2();
       }
-      await task(whiteNotes[twinkle1[index]].play());
-     whiteNotes[twinkle1[index]].stop();
+      await task(whiteNotes[twinkle1[index]].play(),key[twinkle1[index]].classList.add("pressed"));
+      await task3(whiteNotes[twinkle1[index]].stop(),key[twinkle1[index]].classList.remove("pressed")) 
     }
   }
   function timer(ms) { return new Promise(res => setTimeout(res, ms)); }
