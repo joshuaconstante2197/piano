@@ -82,7 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
- 
+  var songsButton = document.getElementById("songsButton");
+
+  songsButton.addEventListener("click", function(){
+    var content = this.nextElementSibling;
+    if(content.style.opacity){
+      content.style.opacity = null;
+    } else{
+      content.style.opacity = '1';
+    }
+  });
   
   
 })
