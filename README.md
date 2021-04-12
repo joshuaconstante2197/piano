@@ -1,7 +1,9 @@
+
 # Piano App
 
 A simple static website that uses JavaScript and Howler.JS to simulate a section of a piano.
 
+[Live Version](https://piano-e2yay.ondigitalocean.app/)
 
 ## Technologies
 
@@ -15,6 +17,7 @@ Project is created with:
 * Play piano keys mapped to the keyboard.
 * Notes are sustained while the key is pressed down as a real piano.
 * Play some simple piano songs to get familiar with the layout.
+* Change the volume of the piano.
 
 ### To-do list:
 * Track the input of a demo song using a score system.
@@ -26,6 +29,7 @@ Project is created with:
 ```bash
 Project is: _in progress_
 ```
+
 
 
 Created by [@joshua.co.dev](https://www.https://portfolio-website-4l9ay.ondigitalocean.app/projects/portfolio-item-piano.html.pl/) 
