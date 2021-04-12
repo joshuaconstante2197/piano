@@ -1,6 +1,3 @@
-
-  
-
 document.addEventListener('DOMContentLoaded', () => {
   
   let keys=  [81,65,83,68,70,71,72,74,75,76,186,222,221,220]
