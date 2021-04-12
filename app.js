@@ -96,18 +96,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  var twinkle1 = [7,7,11,11,5,5,11,10,10,9,9,8,8,7,11,11,10,10,9,9,8,7,7,11,11,5,5,11,7,7,11,11,5,5,11,10,10,9,9,8,8,7];
+  var twinkle1 = [0,7,7,11,11,5,5,11,10,10,9,9,8,8,7,11,11,10,10,9,9,8,7,7,11,11,5,5,11,7,7,11,11,5,5,11,10,10,9,9,8,8,7];
 
   var playButton = document.querySelector(".song-play-icon");
 
   playButton.addEventListener("click", function(){
-    for (let index = 0; index < twinkle1.length; index++) {
-      
-       setTimeout(function(){whiteNotes[twinkle1[index]].play();}, index * 500);
-       setTimeout(function(){whiteNotes[twinkle1[index]].stop();}, index * 800);
-    }
+    playTwinkleSong();    
   })
-  
+  async function task(){
+    await timer(500);
+  }
+  async function task2(){
+    await timer(100);
+  }
+  async function playTwinkleSong(){
+    for (let index = 1; index < twinkle1.length; index++) {
+      if((index - 1) % 7 === 0){
+        await task2();
+      }
+      await task(whiteNotes[twinkle1[index]].play());
+     whiteNotes[twinkle1[index]].stop();
+    }
+  }
+  function timer(ms) { return new Promise(res => setTimeout(res, ms)); }
     
 })
  
