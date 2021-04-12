@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     new Howl({src:['libs/notes/a5.ogg']}),
     new Howl({src:['libs/notes/b5.ogg']})
   ]
+  
+
+
   var blacks2Notes = [
     new Howl({src:['libs/notes/c-3.ogg']}),
     new Howl({src:['libs/notes/d-3.ogg']}),
@@ -92,7 +95,19 @@ document.addEventListener('DOMContentLoaded', () => {
       content.style.opacity = '1';
     }
   });
+
+  var twinkle1 = [7,7,11,11,5,5,11,10,10,9,9,8,8,7,11,11,10,10,9,9,8,7,7,11,11,5,5,11,7,7,11,11,5,5,11,10,10,9,9,8,8,7];
+
+  var playButton = document.querySelector(".song-play-icon");
+
+  playButton.addEventListener("click", function(){
+    for (let index = 0; index < twinkle1.length; index++) {
+      
+       setTimeout(function(){whiteNotes[twinkle1[index]].play();}, index * 500);
+       setTimeout(function(){whiteNotes[twinkle1[index]].stop();}, index * 800);
+    }
+  })
   
-  
+    
 })
  
