@@ -227,6 +227,9 @@ input[type=range]:focus::-ms-fill-upper {
   overflow: hidden;
   transition: max-width 0.2s ease-out;
 }
+.song{
+  padding: 0.5em;
+}
 .song + .song{
   padding-top: 1em;
 }
