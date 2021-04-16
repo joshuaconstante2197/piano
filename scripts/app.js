@@ -1,16 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-  
-  let keys=  [81,65,83,68,70,71,72,74,75,76,186,222,221,220]
-  let blacks2=[87,69,85,73]
-  let blacks3=[82,84,89,79,80,219]
-  
-  document.addEventListener('keydown', keyToNote)
-  document.addEventListener('keyup',pressed)
 
-  var key = document.querySelectorAll("#container .keys")
-  var black2s = document.querySelectorAll("#container .black2s")
-  var black3s = document.querySelectorAll("#container .black3s")
-  
+requirejs.config({
+    //By default load any module IDs from js/lib
+    baseUrl: 'scripts',
+    //except, if the module ID starts with "app",
+    //load it from the js/app directory. paths
+    //config is relative to the baseUrl, and
+    //never includes a ".js" extension since
+    //the paths config could be for a directory.
+    paths: {
+        app: '/scripts/app.js'
+    }
+});
+requirejs(['howler'],
+function   (howler) {
   var whiteNotes= [
     new Howl({src:['libs/notes/c3.ogg']}),
     new Howl({src:['libs/notes/d3.ogg']}),
@@ -27,9 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new Howl({src:['libs/notes/a5.ogg']}),
     new Howl({src:['libs/notes/b5.ogg']})
   ]
-  
-
-
   var blacks2Notes = [
     new Howl({src:['libs/notes/c-3.ogg']}),
     new Howl({src:['libs/notes/d-3.ogg']}),
@@ -44,6 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
     new Howl({src:['libs/notes/g-4.ogg']}),
     new Howl({src:['libs/notes/a-5.ogg']}),
   ]
+});
+
+
+window.onload= function()
+{
+
+  let keys=  [81,65,83,68,70,71,72,74,75,76,186,222,221,220]
+  let blacks2=[87,69,85,73]
+  let blacks3=[82,84,89,79,80,219]
+  
+  document.addEventListener('keydown', keyToNote)
+  document.addEventListener('keyup',pressed)
+
+  var key = document.querySelectorAll("#container .keys")
+  var black2s = document.querySelectorAll("#container .black2s")
+  var black3s = document.querySelectorAll("#container .black3s")
+  
+  
+  
+
+
+  
   
   function keyToNote(e){
     if (e.repeat != undefined) {
@@ -55,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for(i=0;i<=keys.length;i++){
       if(e.keyCode === keys[i]){
         key[i].classList.add("pressed")
+        console.log("a")
         whiteNotes[i].play()
       }else if(e.keyCode === blacks2[i]){
         black2s[i].style.backgroundColor="grey"
@@ -96,10 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
   var twinkle1 = [0,7,7,11,11,5,5,11,10,10,9,9,8,8,7,11,11,10,10,9,9,8,7,7,11,11,5,5,11,7,7,11,11,5,5,11,10,10,9,9,8,8,7];
 
   var playButton = document.querySelector(".song-play-icon");
+  var stopButton = document.querySelector(".song-stop-icon");
 
   playButton.addEventListener("click", function(){
     playTwinkleSong();    
   })
+  
   async function task(){
     await timer(500);
   }
@@ -111,6 +135,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   async function playTwinkleSong(){
     for (let index = 1; index < twinkle1.length; index++) {
+      var stop = false;
+      stopButton.addEventListener("click",function(){
+        Howler.stop();
+        stop = true;
+      })
+      if(stop)
+      {
+        throw {reason: 'stopped'};
+      }
+
       if((index - 1) % 7 === 0){
         await task2();
       }
@@ -120,17 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function timer(ms) { return new Promise(res => setTimeout(res, ms)); }
     
-})
- 
-window.onload= function()
-{
-  let keys=  [81,65,83,68,70,71,72,74,75,76,186,222,221,220]
-  let blacks2=[87,69,85,73]
-  let blacks3=[82,84,89,79,80,219]
 
-  var key = document.querySelectorAll("#container .keys")
-  var black2s = document.querySelectorAll("#container .black2s")
-  var black3s = document.querySelectorAll("#container .black3s")
+ 
+
+ 
 
     for (i = 0; i < key.length; i++) {
       key[i].textContent += String.fromCharCode(keys[i]) 

@@ -227,11 +227,14 @@ input[type=range]:focus::-ms-fill-upper {
   overflow: hidden;
   transition: max-width 0.2s ease-out;
 }
+.song{
+  padding: 1em;
+}
 .song + .song{
   padding-top: 1em;
 }
 .song-play-icon,
-.song-pause-icon{
+.song-stop-icon{
   padding-left: 1em;
   font-size: 23px;
   cursor: pointer;
